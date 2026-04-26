@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renu's Food Corner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">Renu's</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#specials">Specials</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+    <a href="#contact" class="nav-order">Order Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Est. 2025 · Authentic Modern Cooking</div>
+    <h1 class="hero-title">
+      Renu's<br><span>Food Corner</span>
+    </h1>
+    <p class="hero-sub">Where every bite feels like home — freshly made, lovingly served, right here in your neighbourhood.</p>
+    <div class="hero-cta">
+      <a href="#menu" class="btn-primary">Explore Menu</a>
+      <a href="#contact" class="btn-secondary">Find Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="parallax-strip">
+  <div class="parallax-bg"></div>
+  <div class="strip-content">
+    <div class="strip-marquee">
+      <div class="strip-track">
+        <span class="strip-item">Biryani</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Fresh Daily</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Fried Rice</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Rolls &amp; Wraps</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Noodles</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Kothu Parotta</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Western Cooking</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Chicken Fry</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Biryani</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Fresh Daily</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Fried Rice</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Rolls &amp; Wraps</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Noodles</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Kothu Parotta</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Western Cooking</span>
+        <span class="strip-item highlight">✦</span>
+        <span class="strip-item">Chicken Fry</span>
+        <span class="strip-item highlight">✦</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT / FEATURES -->
+<div class="features" id="about">
+  <div class="features-text reveal">
+    <span class="section-tag">Our Story</span>
+    <h2 class="section-title">Made with <em>love</em>, served with pride</h2>
+    <div class="section-line"></div>
+    <p style="font-size:16px;color:var(--text2);line-height:1.9;margin-bottom:24px;">Renu's Food Corner has been a beloved neighbourhood institution since 2010. We believe great food begins with fresh ingredients, honest recipes, and the kind of care you'd only find in a home kitchen.</p>
+    <p style="font-size:16px;color:var(--text2);line-height:1.9;">From hearty biryanis to crispy fried snacks, every dish is crafted to bring warmth to your table. No shortcuts, no compromises.</p>
+  </div>
+  <div class="features-visual">
+    <div class="feat-card reveal">
+      <span class="feat-icon">🏆</span>
+      <div class="feat-num">1+</div>
+      <div class="feat-label">Years of Excellence</div>
+      <p>1 year.Countless cups.Endless love❤️ Serving excellence for a year—and raising the bar every day.</p>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">🍽️</span>
+      <div class="feat-num">50+</div>
+      <div class="feat-label">Menu Items</div>
+      <p>A diverse menu spanning biryanis, snacks, rice dishes, rolls and much more.</p>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">😊</span>
+      <div class="feat-num">5K+</div>
+      <div class="feat-label">Happy Customers</div>
+      <p>A loyal community of food lovers who keep coming back every single day.</p>
+    </div>
+    <div class="feat-card reveal">
+      <span class="feat-icon">🌿</span>
+      <div class="feat-num">100%</div>
+      <div class="feat-label">Fresh Ingredients</div>
+      <p>We source only the freshest local produce and spices, every single morning.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="reveal">
+    <span class="section-tag">Our Menu</span>
+    <h2 class="section-title">What we <em>serve</em></h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="menu-tabs reveal">
+    <button class="tab active" onclick="filterMenu('all',this)">All</button>
+    <button class="tab" onclick="filterMenu('fastfood',this)">Fast Food</button>
+    <button class="tab" onclick="filterMenu('snacks',this)">Chicken &amp; Snacks</button>
+    <button class="tab" onclick="filterMenu('rice',this)">Rice Bowls</button>
+    <button class="tab" onclick="filterMenu('drinks',this)">Drinks &amp; Coolers</button>
+    <button class="tab" onclick="filterMenu('desserts',this)">Desserts</button>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- SPECIALS -->
+<section class="specials" id="specials">
+  <div class="specials-bg"></div>
+  <div class="specials-grid">
+    <div class="special-visual reveal">
+      <div class="animated-chicken-container">
+        <div class="steam steam-1"></div>
+        <div class="steam steam-2"></div>
+        <div class="steam steam-3"></div>
+        <div class="steam steam-4"></div>
+        <img src="images/hot_chicken.png" alt="Hot Chicken" class="animated-chicken">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="section-tag">Today's Specials</span>
+      <h2 class="section-title">Chef's <em>Picks</em></h2>
+      <div class="section-line"></div>
+      <div class="specials-list">
+        <div class="special-item">
+          <div class="special-item-left">
+            <span class="special-item-icon">🍔</span>
+            <div>
+              <div class="special-item-name">Double Patty Monster Burger</div>
+              <div class="special-item-tag">✦ Bestseller · Non-Veg</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="special-item-price">₹249</div>
+            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Double%20Patty%20Monster%20Burger%20(%E2%82%B9249)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-item-left">
+            <span class="special-item-icon">🍗</span>
+            <div>
+              <div class="special-item-name">Half Bucket Chicken</div>
+              <div class="special-item-tag">✦ Must Try · Non-Veg</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="special-item-price">₹389</div>
+            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Half%20Bucket%20Chicken%20(%E2%82%B9389)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-item-left">
+            <span class="special-item-icon">🥘</span>
+            <div>
+              <div class="special-item-name">Schezwan Chicken Bread Omelette</div>
+              <div class="special-item-tag">✦ Popular · Non-Veg</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="special-item-price">₹139</div>
+            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Schezwan%20Chicken%20Bread%20Omelette%20(%E2%82%B9139)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+          </div>
+        </div>
+        <div class="special-item">
+          <div class="special-item-left">
+            <span class="special-item-icon">🧋</span>
+            <div>
+              <div class="special-item-name">Chocolate Falooda</div>
+              <div class="special-item-tag">✦ Fan Favourite · Drinks</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="special-item-price">₹149</div>
+            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Chocolate%20Falooda%20(%E2%82%B9149)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery">
+  <div class="gallery-title reveal">
+    <span class="section-tag">Gallery</span>
+    <h2 class="section-title">A feast for <em>the eyes</em></h2>
+  </div>
+  <div class="gallery-track" id="galleryTrack"></div>
+</div>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div style="text-align:center;" class="reveal">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title">The <em>Renu's</em> Promise</h2>
+    <div class="section-line" style="margin:0 auto 0;"></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="why-icon">🌶️</span>
+      <h3>Authentic Flavours</h3>
+      <p>Our recipes have been passed down and perfected over generations. Every spice blend, every marinade — made from scratch in our kitchen.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">⏱️</span>
+      <h3>Quick &amp; Fresh</h3>
+      <p>Fast service without cutting corners. Your food is prepared fresh to order, so every dish arrives hot and full of flavour.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">💰</span>
+      <h3>Best Value</h3>
+      <p>Restaurant-quality food at everyday prices. We believe good food should be accessible to everyone, every day.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🧹</span>
+      <h3>Hygiene First</h3>
+      <p>Spotless kitchen, premium cookware, food-safe packaging. We maintain the highest standards of cleanliness at every step.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🚚</span>
+      <h3>Home Delivery</h3>
+      <p>Can't make it in? We deliver hot meals straight to your doorstep. Quick turnaround, piping hot food guaranteed.</p>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🤝</span>
+      <h3>Community Favourite</h3>
+      <p>A true neighbourhood gem. We've built lasting relationships with our customers and serve hundreds of regulars every day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="reveal">
+    <span class="section-tag">Customer Love</span>
+    <h2 class="section-title">What our guests <em>say</em></h2>
+    <div class="section-line" style="margin:0 auto;"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"We came from Hosur, best place to eat fast food. Great place , plants greenery and super food. Owner is very kind and friendly."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Simran Soni</div><div class="testi-loc">Customer</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Good place to have snacks and tea. We can get burger, fried chicken etc. Reasonable price and good place to hang out."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">T</div>
+        <div><div class="testi-name">Tamil Explorer</div><div class="testi-loc">Customer</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Excellent place and food quality bestand honestly rate this cafe 5/5 for sure"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">B</div>
+        <div><div class="testi-name">Brindha Bindhu</div><div class="testi-loc">Customer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-inner reveal">
+    <span class="section-tag">Visit Us</span>
+    <h2><em>Come hungry,</em><br>leave happy.</h2>
+    <span class="cta-phone">📞 6381883013</span>
+    <p class="cta-addr">📍 Hanifa hospital, 381/1, Hospital St, opposite Thiruthuraipoondi, Thiruthuraipoondi, Tamil Nadu 614713</p>
+    <br><br>
+    <div class="cta-actions">
+      <a href="tel:+916381883013" class="btn-primary">Call Now</a>
+      <a href="https://wa.me/916381883013?text=I%20want%20to%20place%20a%20order" class="btn-secondary">WhatsApp Order</a>
+    </div>
+    <br><br>
+    <p style="font-size:14px;color:var(--text3); margin-bottom: 40px;">
+      Mon – Sun &nbsp;|&nbsp; 10:00 AM – 10:00 PM
+    </p>
+
+    <div style="width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+      <iframe src="https://www.google.com/maps?q=hanifa+hospital,+381/1,+Hospital+St,+opposite+Thiruthuraipoondi,+Thiruthuraipoondi,+Tamil+Nadu+614713&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Renu's Food Corner</div>
+      <p class="footer-desc">Serving authentic homestyle food with love since 2010. Your neighbourhood favourite for biryanis, snacks, rolls, and much more.</p>
+      <br>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#specials">Specials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#menu">Fast Food</a></li>
+        <li><a href="#menu">Chicken &amp; Snacks</a></li>
+        <li><a href="#menu">Rice Bowls</a></li>
+        <li><a href="#menu">Drinks &amp; Coolers</a></li>
+        <li><a href="#menu">Desserts</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <ul>
+        <li><a href="#">Mon–Sun: 10am–10pm</a></li>
+        <li><a href="#">Delivery Available</a></li>
+        <li><a href="#">Takeaway Welcome</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Renu's Food Corner. Made with ❤️ in TTP.</span>
+    <span>Designed with love for great food</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
