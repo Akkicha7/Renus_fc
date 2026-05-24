@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renu's Food Corner</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/logo.png">
 </head>
-<body>
+<body class="is-loading">
+
+<div class="page-loader" id="pageLoader" aria-live="polite">
+  <div class="loader-content">
+    <img
+      id="loaderLogo"
+      class="loader-logo"
+      src="images/loader-logo_light.jpeg"
+      alt="Renu's Food Corner elephant logo"
+    >
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          const logoImg = document.getElementById('loaderLogo');
+          if (logoImg) logoImg.src = 'images/loader-logo_dark.jpeg';
+        }
+      })();
+    </script>
+    
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -17,6 +45,7 @@
     <li><a href="#menu">Menu</a></li>
     <li><a href="#specials">Specials</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#franchise">Franchise</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div style="display:flex; align-items:center; gap:16px;">
@@ -24,6 +53,9 @@
       <span class="sun-icon">☀️</span>
       <span class="moon-icon">🌙</span>
     </button>
+    <a href="cart.html" class="cart-icon-btn" aria-label="View Cart">
+      🍽️ <span class="cart-badge-count">0</span>
+    </a>
     <a href="#contact" class="nav-order">Order Now</a>
   </div>
 </nav>
@@ -33,7 +65,7 @@
   <div class="hero-bg"></div>
   <div class="hero-particles" id="particles"></div>
   <div class="hero-content">
-    <div class="hero-badge">Est. 2025 · Authentic Modern Cooking</div>
+    <div class="hero-badge">Est. 2024 · Authentic Modern Cooking</div>
     <h1 class="hero-title">
       Renu's<br><span>Food Corner</span>
     </h1>
@@ -65,7 +97,7 @@
         <span class="strip-item highlight">✦</span>
         <span class="strip-item">Noodles</span>
         <span class="strip-item highlight">✦</span>
-        <span class="strip-item">Kothu Parotta</span>
+        <span class="strip-item">Wafffle</span>
         <span class="strip-item highlight">✦</span>
         <span class="strip-item">Western Cooking</span>
         <span class="strip-item highlight">✦</span>
@@ -81,7 +113,7 @@
         <span class="strip-item highlight">✦</span>
         <span class="strip-item">Noodles</span>
         <span class="strip-item highlight">✦</span>
-        <span class="strip-item">Kothu Parotta</span>
+        <span class="strip-item">Brownie</span>
         <span class="strip-item highlight">✦</span>
         <span class="strip-item">Western Cooking</span>
         <span class="strip-item highlight">✦</span>
@@ -104,9 +136,9 @@
   <div class="features-visual">
     <div class="feat-card reveal">
       <span class="feat-icon">🏆</span>
-      <div class="feat-num">1+</div>
+      <div class="feat-num">2</div>
       <div class="feat-label">Years of Excellence</div>
-      <p>1 year.Countless cups.Endless love❤️ Serving excellence for a year—and raising the bar every day.</p>
+      <p>2 years.Countless cups.Endless love❤️ Serving excellence for a year—and raising the bar every day.</p>
     </div>
     <div class="feat-card reveal">
       <span class="feat-icon">🍽️</span>
@@ -136,15 +168,37 @@
     <h2 class="section-title">What we <em>serve</em></h2>
     <div class="section-line"></div>
   </div>
-  <div class="menu-tabs reveal">
-    <button class="tab active" onclick="filterMenu('all',this)">All</button>
-    <button class="tab" onclick="filterMenu('fastfood',this)">Fast Food</button>
-    <button class="tab" onclick="filterMenu('snacks',this)">Chicken &amp; Snacks</button>
-    <button class="tab" onclick="filterMenu('rice',this)">Rice Bowls</button>
-    <button class="tab" onclick="filterMenu('drinks',this)">Drinks &amp; Coolers</button>
-    <button class="tab" onclick="filterMenu('desserts',this)">Desserts</button>
+  <div class="menu-tabs reveal" style="overflow-x: auto; white-space: nowrap; display: flex; flex-wrap: nowrap; justify-content: flex-start; -ms-overflow-style: none; scrollbar-width: none;">
+    <button class="tab active" onclick="filterMenu('tea',this, true)">Tea</button>
+    <button class="tab" onclick="filterMenu('milo',this, true)">Milo</button>
+    <button class="tab" onclick="filterMenu('coffee',this, true)">Coffee</button>
+    <button class="tab" onclick="filterMenu('milkshake',this, true)">Milkshake</button>
+    <button class="tab" onclick="filterMenu('flavoured_milk',this, true)">Flavoured Milk</button>
+    <button class="tab" onclick="filterMenu('regular',this, true)">Regular</button>
+    <button class="tab" onclick="filterMenu('thickshake',this, true)">Premium Thickshakes</button>
+    <button class="tab" onclick="filterMenu('juice',this, true)">Fresh Juice</button>
+    <button class="tab" onclick="filterMenu('cooler',this, true)">Cooler</button>
+    <button class="tab" onclick="filterMenu('lassi',this, true)">Lassi</button>
+    <button class="tab" onclick="filterMenu('snacks',this, true)">Snacks</button>
+    <button class="tab" onclick="filterMenu('munchies',this, true)">Happy Munchies</button>
+    <button class="tab" onclick="filterMenu('chicken_solo',this, true)">Crispy Chicken Solo</button>
+    <button class="tab" onclick="filterMenu('bucket',this, true)">Bucket Chicken</button>
+    <button class="tab" onclick="filterMenu('maggi',this, true)">Maggi</button>
+    <button class="tab" onclick="filterMenu('bread_omelette',this, true)">Bread Omelette</button>
+    <button class="tab" onclick="filterMenu('sandwich',this, true)">Sandwich</button>
+    <button class="tab" onclick="filterMenu('burgers',this, true)">Burgers</button>
+    <button class="tab" onclick="filterMenu('pizza',this, true)">Pizza</button>
+    <button class="tab" onclick="filterMenu('pasta',this, true)">Pasta</button>
+    <button class="tab" onclick="filterMenu('rice',this, false)">Rice Bowl</button>
+    <button class="tab" onclick="filterMenu('frankie',this, true)">Frankie Roll Menu</button>
+    <button class="tab" onclick="filterMenu('waffle',this, true)">Waffle</button>
+    <button class="tab" onclick="filterMenu('dessert',this, true)">Dessert</button>
+    <button class="tab" onclick="filterMenu('falooda',this, true)">Falooda</button>
   </div>
   <div class="menu-grid" id="menuGrid"></div>
+  <div style="text-align: center; margin-top: 40px;" class="reveal">
+    <a href="full-menu.html" class="btn-primary" style="padding: 14px 32px; font-size: 1.1rem;">View Full Menu</a>
+  </div>
 </section>
 
 <!-- SPECIALS -->
@@ -169,13 +223,13 @@
           <div class="special-item-left">
             <span class="special-item-icon">🍔</span>
             <div>
-              <div class="special-item-name">Double Patty Monster Burger</div>
+              <div class="special-item-name">Crispy Chicken Monster Burger</div>
               <div class="special-item-tag">✦ Bestseller · Non-Veg</div>
             </div>
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
             <div class="special-item-price">₹249</div>
-            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Double%20Patty%20Monster%20Burger%20(%E2%82%B9249)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+            <button class="order-item-btn" onclick="addToPlate('Crispy Chicken Monster Burger', 249, 'images/hot_chicken.png', event)">Add to My Plate</button>
           </div>
         </div>
         <div class="special-item">
@@ -188,7 +242,7 @@
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
             <div class="special-item-price">₹389</div>
-            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Half%20Bucket%20Chicken%20(%E2%82%B9389)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+            <button class="order-item-btn" onclick="addToPlate('Half Bucket Chicken', 389, 'images/halfbucket.jpeg', event)">Add to My Plate</button>
           </div>
         </div>
         <div class="special-item">
@@ -201,7 +255,7 @@
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
             <div class="special-item-price">₹139</div>
-            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Schezwan%20Chicken%20Bread%20Omelette%20(%E2%82%B9139)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+            <button class="order-item-btn" onclick="addToPlate('Schezwan Chicken Bread Omelette', 139, 'images/schezwan_chicken_bread_omelette.jpeg', event)">Add to My Plate</button>
           </div>
         </div>
         <div class="special-item">
@@ -214,7 +268,7 @@
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
             <div class="special-item-price">₹149</div>
-            <a href="https://wa.me/916381883013?text=Hi%2C%20I%20want%20to%20order%20Chocolate%20Falooda%20(%E2%82%B9149)" class="order-item-btn" target="_blank" rel="noopener noreferrer">Order this item</a>
+            <button class="order-item-btn" onclick="addToPlate('Chocolate Falooda', 149, 'images/choco_falooda.jpeg', event)">Add to My Plate</button>
           </div>
         </div>
       </div>
@@ -314,7 +368,7 @@
     <span class="section-tag">Visit Us</span>
     <h2><em>Come hungry,</em><br>leave happy.</h2>
     <span class="cta-phone">📞 6381883013</span>
-    <p class="cta-addr">📍 Hanifa hospital, 381/1, Hospital St, opposite Thiruthuraipoondi, Thiruthuraipoondi, Tamil Nadu 614713</p>
+    <p class="cta-addr">📍 Hanifa Hospital, 381/1, Hospital St, opposite Thiruthuraipoondi, Thiruthuraipoondi, Tamil Nadu 614713</p>
     <br><br>
     <div class="cta-actions">
       <a href="tel:+916381883013" class="btn-primary">Call Now</a>
@@ -331,12 +385,66 @@
   </div>
 </section>
 
+<!-- FRANCHISE -->
+<section class="franchise-section" id="franchise">
+  <div class="franchise-grid">
+    <div class="franchise-content reveal">
+      <span class="section-tag">Business Expansion</span>
+      <h2 class="section-title">Franchise Opportunities</h2>
+      <div class="section-line"></div>
+      <p class="franchise-intro">
+        Partner with Renu's Food Corner and grow with a trusted neighbourhood food brand.<br>
+        Build a strong local business with our proven systems, quality focus, and ongoing brand support.
+      </p>
+
+      <div class="franchise-panels">
+        <div class="franchise-panel">
+          <h3>Why Choose Us</h3>
+          <ul>
+            <li>Recognized brand with strong local customer loyalty</li>
+            <li>Operational guidance for setup, launch, and day-to-day management</li>
+            <li>Standardized recipes and quality-driven kitchen processes</li>
+            <li>Marketing support to help drive consistent footfall</li>
+          </ul>
+        </div>
+        <div class="franchise-panel">
+          <h3>Requirements</h3>
+          <ul>
+            <li>Prime location with good visibility and accessibility</li>
+            <li>Commitment to brand standards and service quality</li>
+            <li>Dedicated team to manage operations and customer experience</li>
+            <li>Passion for hospitality and long-term business growth</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-primary franchise-cta">Contact for Franchise</a>
+    </div>
+
+    <div class="franchise-image-wrap reveal">
+      <img src="images/franchise-poster.jpeg" alt="Renu's Food Corner franchise opportunity" class="franchise-image">
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
       <div class="footer-brand">Renu's Food Corner</div>
-      <p class="footer-desc">Serving authentic homestyle food with love since 2010. Your neighbourhood favourite for biryanis, snacks, rolls, and much more.</p>
+      <p class="footer-desc">Serving authentic homestyle food with love since 2024. Your neighbourhood favourite for biryanis, snacks, rolls, and much more.</p>
+      <div class="footer-social">
+        <a
+          class="social-btn"
+          href="https://www.instagram.com/rfc_ttp.official?utm_source=qr&igsh=b2ZpcXVlcmRhYXps"
+          
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow on Instagram"
+        >
+          <img src="images/insta-logo.jpeg" alt="Instagram" class="social-icon">
+        </a>
+      </div>
       <br>
     </div>
     <div class="footer-col">
@@ -346,6 +454,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#specials">Specials</a></li>
+        <li><a href="#franchise">Franchise</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -369,7 +478,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Renu's Food Corner. Made with ❤️ in TTP.</span>
+    <span>© 2024 Renu's Food Corner. Made with ❤️ in TTP.</span>
     <span>Designed with love for great food</span>
   </div>
 </footer>

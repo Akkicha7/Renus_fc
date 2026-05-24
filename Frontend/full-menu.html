@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script>
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Menu - Renu's Food Corner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/logo.png">
+<style>
+  #nav {
+    background: var(--bg2) !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding: 16px 60px !important;
+    box-shadow: var(--shadow-nav) !important;
+  }
+  @media(max-width:900px) {
+    #nav {
+      padding: 10px 24px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div style="display:flex; align-items:center; gap: 20px;">
+    <a class="nav-logo">Renu's</a>
+  </div>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span class="sun-icon">☀️</span>
+      <span class="moon-icon">🌙</span>
+    </button>
+    <a href="cart.html" class="cart-icon-btn" aria-label="View Cart">
+      🍽️ <span class="cart-badge-count">0</span>
+    </a>
+    <a href="index.html" class="nav-order">← Back to Home</a>
+  </div>
+</nav>
+
+<section class="menu-section" style="padding-top: 140px; min-height: 100vh;">
+  <div class="reveal" style="text-align: center;">
+    <span class="section-tag" style="display: block; margin: 0 auto 10px;">Our Complete Selection</span>
+    <h2 class="section-title">Full <em>Menu</em></h2>
+    <div class="section-line" style="margin: 0 auto;"></div>
+  </div>
+  
+  <div class="menu-tabs reveal">
+    <button class="tab active" onclick="filterMenu('all',this, false)">All</button>
+    <button class="tab" onclick="filterMenu('tea',this, false)">Tea</button>
+    <button class="tab" onclick="filterMenu('coffee',this, false)">Coffee</button>
+    <button class="tab" onclick="filterMenu('milo',this, false)">Milo</button>
+    <button class="tab" onclick="filterMenu('milkshake',this, false)">Milkshake</button>
+    <button class="tab" onclick="filterMenu('flavoured_milk',this, false)">Flavoured Milk</button>
+    <button class="tab" onclick="filterMenu('regular',this, false)">Regular</button>
+    <button class="tab" onclick="filterMenu('thickshake',this, false)">Premium Thickshakes</button>
+    <button class="tab" onclick="filterMenu('juice',this, false)">Fresh Juice</button>
+    <button class="tab" onclick="filterMenu('cooler',this, false)">Cooler</button>
+    <button class="tab" onclick="filterMenu('lassi',this, false)">Lassi</button>
+    <button class="tab" onclick="filterMenu('snacks',this, false)">Snacks</button>
+    <button class="tab" onclick="filterMenu('munchies',this, false)">Happy Munchies</button>
+    <button class="tab" onclick="filterMenu('chicken_solo',this, false)">Crispy Chicken Solo</button>
+    <button class="tab" onclick="filterMenu('bucket',this, false)">Bucket Chicken</button>
+    <button class="tab" onclick="filterMenu('maggi',this, false)">Maggi</button>
+    <button class="tab" onclick="filterMenu('bread_omelette',this, false)">Bread Omelette</button>
+    <button class="tab" onclick="filterMenu('sandwich',this, false)">Sandwich</button>
+    <button class="tab" onclick="filterMenu('fastfood',this, false)">Burger</button>
+    
+    <button class="tab" onclick="filterMenu('pizza',this, false)">Pizza</button>
+    <button class="tab" onclick="filterMenu('pasta',this, false)">Pasta</button>
+    <button class="tab" onclick="filterMenu('rice',this, false)">Rice Bowl</button>
+    <button class="tab" onclick="filterMenu('frankie',this, false)">Frankie Roll Menus</button>
+    <button class="tab" onclick="filterMenu('momos',this, false)">Momos</button>
+    <button class="tab" onclick="filterMenu('waffle',this, false)">Waffle</button>
+    <button class="tab" onclick="filterMenu('dessert',this, false)">Dessert</button>
+    <button class="tab" onclick="filterMenu('falooda',this, false)">Falooda</button>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top: 40px; padding-top: 40px;">
+  <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+    <span>© 2024 Renu's Food Corner. Made with ❤️ in TTP.</span>
+    <span>Designed with love for great food</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
